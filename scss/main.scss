@@ -30,14 +30,20 @@ body {
 }
 .main {
     @include flexCenter(row);
-    width: 80%;
+    width: 80% - 40%;
     margin: 0 auto;
-
-    #{&}__paragraph{
+    #{&}__paragraph1 {
         font-weight: weight(regular);
 
         &:hover {
             color: pink;
+        }
+    }
+    #{&}__paragraph2 {
+        @extend .main__paragraph1;
+
+        &:hover {
+            color: $accent-color;
         }
     }
     @include mobile {
